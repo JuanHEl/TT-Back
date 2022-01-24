@@ -20,6 +20,9 @@ class CreateAdministradorServiciosLogsTable extends Migration
             $table->dateTime('fecha_inicio')->nullable()->comment('Fecha de inicio del servicio');
             $table->dateTime('fecha_fin')->nullable()->comment('Fecha de fin del servicio');
             $table->string('local_dir_mac', 40)->comment('dirección mac de donde se aplica al servicio');
+            $table->integer('id_status_log');
+            $table->integer('id_administradores');
+            $table->integer('id_cat_servicios');
         });
     }
 

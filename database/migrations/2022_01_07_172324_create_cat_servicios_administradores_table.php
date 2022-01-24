@@ -16,7 +16,9 @@ class CreateCatServiciosAdministradoresTable extends Migration
         Schema::create('cat_servicios_administradores', function (Blueprint $table) {
             $table->bigIncrements('id_cat_servicios_administradores');
             $table->dateTime('fecha_ult_mod')->nullable()->comment('Fecha en la que se modificó el catalogo por ultima vez');
-            $table->integer('status_servicios_admin');        
+            $table->integer('status_servicios_admin');
+            $table->integer('id_administradores');
+            $table->integer('id_cat_admin');        
         });
     }
 

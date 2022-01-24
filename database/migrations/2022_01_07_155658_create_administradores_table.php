@@ -22,6 +22,8 @@ class CreateAdministradoresTable extends Migration
             $table->string('password_hash',120)->comment('Contraseña');
             $table->dateTime('fecha_ingreso')->nullable()->comment('Fecha de la ultima vez que inicio sesión');
             $table->dateTime('fecha_ult_cambio_pass')->nullable()->comment('Fecha en la que se cambió la contraseña');
+            $table->integer('id_status_admin');
+            $table->integer('id_tipo_admin');
         });
     }
 
