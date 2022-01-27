@@ -20,9 +20,12 @@ class CreateAdministradorServiciosLogsTable extends Migration
             $table->dateTime('fecha_inicio')->nullable()->comment('Fecha de inicio del servicio');
             $table->dateTime('fecha_fin')->nullable()->comment('Fecha de fin del servicio');
             $table->string('local_dir_mac', 40)->comment('dirección mac de donde se aplica al servicio');
-            $table->integer('id_status_log');
-            $table->integer('id_administradores');
-            $table->integer('id_cat_servicios');
+            $table->unsignedBigInteger('id_status_log');
+            // $table->foreign('id_status_log')->references('id_status_log')->on('status_log');
+            $table->unsignedBigInteger('id_administradores');
+            // $table->foreign('id_administradores')->references('id_administradores')->on('administradores');
+            $table->unsignedBigInteger('id_cat_servicios');
+            // $table->foreign('id_cat_servicios')->references('id_cat_servicios')->on('cat_servicios');
         });
     }
 

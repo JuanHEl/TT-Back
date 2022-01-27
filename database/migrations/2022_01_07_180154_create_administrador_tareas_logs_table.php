@@ -18,9 +18,12 @@ class CreateAdministradorTareasLogsTable extends Migration
             $table->dateTime('fecha_inicio')->nullable()->comment('Fecha de inicio de la tarea');
             $table->dateTime('fecha_fin')->nullable()->comment('Fecha de fin de la tarea');
             $table->string('local_dir_mac', 40)->comment('dirección mac de donde se aplica la tarea');
-            $table->integer('id_status_log');
-            $table->integer('id_administradores');
-            $table->integer('id_cat_tarea');
+            $table->unsignedBigInteger('id_status_log');
+            // $table->foreign('id_status_log')->references('id_status_log')->on('status_log');
+            $table->unsignedBigInteger('id_administradores');
+            // $table->foreign('id_administradores')->references('id_administradores')->on('administradores');
+            $table->unsignedBigInteger('id_cat_tarea');
+            // $table->foreign('id_cat_tarea')->references('id_cat_tarea')->on('cat_tarea');
         });
     }
 

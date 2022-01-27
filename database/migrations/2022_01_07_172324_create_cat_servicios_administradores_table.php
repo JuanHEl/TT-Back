@@ -17,8 +17,10 @@ class CreateCatServiciosAdministradoresTable extends Migration
             $table->bigIncrements('id_cat_servicios_administradores');
             $table->dateTime('fecha_ult_mod')->nullable()->comment('Fecha en la que se modificó el catalogo por ultima vez');
             $table->integer('status_servicios_admin');
-            $table->integer('id_administradores');
-            $table->integer('id_cat_admin');        
+            $table->unsignedBigInteger('id_administradores');
+            // $table->foreign('id_administradores')->references('id_administradores')->on('administradores');
+            $table->unsignedBigInteger('id_cat_servicios');
+            // $table->foreign('id_cat_servicios')->references('id_cat_servicios')->on('cat_servicios');        
         });
     }
 
