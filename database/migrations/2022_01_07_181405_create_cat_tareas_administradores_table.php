@@ -18,9 +18,9 @@ class CreateCatTareasAdministradoresTable extends Migration
             $table->dateTime('fecha_ult_mod')->nullable()->comment('Fecha en la que se modificó el catalogo por ultima vez');            
             $table->integer('status_servicios_admin');
             $table->unsignedBigInteger('id_administradores');
-            // $table->foreign('id_administradores')->references('id_administradores')->on('administradores');
-            $table->unsignedBigInteger('id_cat_tarea'); 
-            // $table->foreign('id_cat_tarea')->references('id_cat_tarea')->on('cat_tarea');       
+            $table->foreign('id_administradores')->references('id_administradores')->on('administradores');
+            $table->unsignedBigInteger('id_cat_tareas'); 
+            $table->foreign('id_cat_tareas')->references('id_cat_tareas')->on('cat_tareas');       
         });
     }
 
